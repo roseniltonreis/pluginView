@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+           id="com.phonegap.plugins.viewer"
+      version="1.0.0">
+    <name>Viewer</name>
+    <description>Cordova InAppBrowser Plugin</description>
+    <license>Apache 2.0</license>
+    <keywords>cordova,file</keywords>
+
+
+    <js-module src="www/viewer.js" name="Viewer">
+        <clobbers target="Viewer" />
+    </js-module>
+    
+    <!-- android -->
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="Viewer">
+                <param name="android-package" value="com.phonegap.plugins.viewer.Viewer"/>
+            </feature>
+        </config-file>
+
+       <source-file src="src/android/Viewer.java" target-dir="com/phonegap/plugins/viewer" /> 
+    </platform>
+
+</plugin>
